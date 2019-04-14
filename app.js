@@ -1,4 +1,4 @@
-const app = require('express');
+const app = require('express')();
 const server = require('http').createServer(app);
 var id = require('socket.io')(server);
 
@@ -14,8 +14,9 @@ var chat = io.of('/chat').on('connection', (socket) =>{
         var room = socket.room = data.room;
         // room join
         socket.join(room);
+        // room에 조인되어 있는 클라이언트에게 메시지를 전송
         chat.to(room).emit('chat message', data.msg);
-        
+
     })
 })
 

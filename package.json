@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kgh940525/Node_Websocket_Chat#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
   }
 }
