@@ -1,0 +1,22 @@
+{
+  "name": "node_websocket_chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgh940525/Node_Websocket_Chat.git"
+  },
+  "author": "kgh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kgh940525/Node_Websocket_Chat/issues"
+  },
+  "homepage": "https://github.com/kgh940525/Node_Websocket_Chat#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
