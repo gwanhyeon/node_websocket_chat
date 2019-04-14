@@ -7,13 +7,15 @@
 </head>
 <body>
   <div class="container">
-    <h3>Socket.io Chat Example</h3>
+    <h3>한국교통대학교 실시간 채팅룸</h3>
     <!-- <form class="form-inline"> -->
  
 
-    <form class="form-horizontal">
+    <form class="form-horizontal" id="frm">
+    <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button id ="invite" type="submit" class="btn btn-default">실시간 대화방 참가하기</button>
+      <button id ="invite" type="submit" class="btn btn-default">한국교통대학교 실시간 대화방 참가하기</button>
+    </div>
     </div>
       <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Name</label>
@@ -35,9 +37,10 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Send</button>
+          <button type="submit" class="btn btn-default" onclick="resetAll()">Send</button>
         </div>
       </div>
+    </form>
     
     <form class="form-horizontal">
     <ul id="chat" class="form-group">
@@ -60,8 +63,19 @@
           name: $("#name").val(),
         //   room: $("#room").val(),
           msg: $("#msg").val()
+          
         });
-      });
+        $('#name').val('');
+        $('#msg').val('');
+        // $(document).ready(function() {
+        // $("#name").empty();
+        // $("#name").append("이름을 입력하세요.");
+        // $("#msg").empty("");
+        // $("#msg").append("메시지를 입력하세요.");
+        // })
+  
+       
+    });
       // 서버로부터의 메시지가 수신되면
       chat.on("chat message", function(data) {
         $('#chat').append($('<li>').text(data));
