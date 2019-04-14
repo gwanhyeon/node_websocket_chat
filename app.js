@@ -1,9 +1,9 @@
 const app = require('express')();
 const server = require('http').createServer(app);
-var id = require('socket.io')(server);
+var io = require('socket.io')(server);
 
 // index.html 렌더
-app.length('/',(req,res) =>{
+app.get('/',(req,res) =>{
     res.sendFile(__dirname + '/index-room.html');
 })
 // namespace /chat 접속
