@@ -20,8 +20,10 @@ var chat = io.of('/chat').on('connection', function(socket) {
     room = "1"
     // room에 join한다
     socket.join(room);
+    if(name != '' && msg !=''){
     // room에 join되어 있는 클라이언트에게 메시지를 전송한다
     chat.to(room).emit('chat message',"Nickname:" + data.name + "Massage:"+data.msg);
+  }
     
     
     // chat.to(room).emit('chat message', data.name);
