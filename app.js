@@ -12,7 +12,10 @@ var chat = io.of('/chat').on('connection', (socket) =>{
         console.log('message from client : ', data);
         var name = socket.name = data.name;
         var room = socket.room = data.room;
+        // room join
         socket.join(room);
+        chat.to(room).emit('chat message', data.msg);
+        
     })
 })
 
